@@ -31,7 +31,7 @@ const LoginForm = (props: Props) => {
     });
 
     if (!res?.error) {
-      router.push(props.callbackUrl ?? process.env.NEXTAUTH_URL);
+      router.push(props.callbackUrl ??  (process.env.NEXTAUTH_URL || "/") );
     }
   };
   return (
