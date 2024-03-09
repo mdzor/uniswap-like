@@ -1,13 +1,11 @@
 
-import { Button } from "@/components/ui/button";
-import { signIn, signOut } from 'next-auth/react'
 import Link from "next/link";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { options } from "./api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth/next";
 
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession(options);
   const user = session?.user;
 
   return (

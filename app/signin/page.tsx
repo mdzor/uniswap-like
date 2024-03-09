@@ -1,10 +1,7 @@
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth/next";
 import LoginForm from "./components/login-form";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { options } from "../api/auth/[...nextauth]/options";
 
 
 type Props = {
@@ -12,7 +9,7 @@ type Props = {
 };
 
 export default async function SignIn(props: Props) {
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession(options);
 
   if (session && session.user?.address) {
     return redirect("/explorer");

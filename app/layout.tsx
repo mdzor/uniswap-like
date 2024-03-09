@@ -9,8 +9,6 @@ import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Providers } from "./providers"
-import { authOptions } from "./api/auth/[...nextauth]/route";
-import { getServerSession } from "next-auth/next";
 
 export const metadata: Metadata = {
   title: {

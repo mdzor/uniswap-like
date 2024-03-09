@@ -1,10 +1,10 @@
 
 import TokenList from "./components/tokens-list";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { options } from "../api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
 
 export default async function Explorer() {
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession(options);
 
  
   return (

@@ -1,10 +1,11 @@
+import axios from 'axios';
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth/next'
-import { authOptions } from '../auth/[...nextauth]/route';
+import { options } from '../auth/[...nextauth]/options';
 
 export async function GET(request: Request) {
 
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession(options);
 
 /*   if (!session ) {
     return new NextResponse(JSON.stringify({ error: 'unauthorized' }), {
@@ -18,10 +19,8 @@ export async function GET(request: Request) {
       'X-CMC_PRO_API_KEY': cmcApiKey
     };
 
-    const response = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=1000', {
-      headers,
-    });
-    const data = await response.json();
+    const response = await axios('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=1000', { headers });
+    const data = await response.data;
 
     // TODO: Save data somewhere for future caching
     // TODO: Add caching policy - this endpoint data can likely be cached 30m to 1h
