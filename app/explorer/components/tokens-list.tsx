@@ -1,10 +1,10 @@
 import React from "react";
 
 import { DataTable } from "@/components/data-table";
-import { Token, columns } from "./columns";
+import { TokenData, columns } from "./columns";
 
 
-async function getTokensList(): Promise<Token[]> {
+async function getTokensList(): Promise<TokenData[]> {
 
    const res = await fetch(process.env.NEXTAUTH_URL + '/api/coinmarketcap', {
       next: { revalidate: 3600 }

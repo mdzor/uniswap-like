@@ -5,7 +5,7 @@ export type ExtendedUser = DefaultSession["user"] & {
     address?: string,
 }
 
-/* extend the detials of Session if needed */
+/* extend the detailsls of Session if needed */
 declare module "next-auth" {
     interface Session {
         user: ExtendedUser
@@ -17,5 +17,12 @@ declare module "@auth/core/jwt" {
     interface JWT {
         username: string,
         address?: string,
+    }
+}
+
+/* extend the detials of JWT if needed */
+declare module "@uniswap/sdk-core" {
+    interface Token {
+        logoURI?: string
     }
 }

@@ -11,7 +11,7 @@ export default async function Explorer() {
 
       <div className="container relative  h-[600px] flex-col md:grid ">
         <div className="mx-auto flex w-full flex-col justify-center space-y-2 ">
-          <h1 className="text-center font-bold p-4"> Token Explorer</h1>
+          <h1 className="text-center text-3xl font-bold p-4"> Token Explorer</h1>
           
           {session && 
               <TokenList />

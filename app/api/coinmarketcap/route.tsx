@@ -5,13 +5,8 @@ import { options } from '../auth/[...nextauth]/options';
 
 export async function GET(request: Request) {
 
-  const session = await getServerSession(options);
 
-/*   if (!session ) {
-    return new NextResponse(JSON.stringify({ error: 'unauthorized' }), {
-      status: 401
-    })
-  } */
+
   try {
 
     const cmcApiKey = process.env.CMC_API_KEY;

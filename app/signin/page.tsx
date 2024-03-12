@@ -19,9 +19,10 @@ export default async function SignIn(props: Props) {
 
   return (
 
-    <div className="container relative  h-[600px] flex-col items-center justify-center md:grid ">
+    <div className="container relative  h-[600px] flex-col   md:grid ">
       <div className="mx-auto flex w-full flex-col justify-center space-y-2 sm:w-[350px]">
-        <h1 className="p4 font-bold text-center"> Login with your email and password</h1>
+      <h1 className="text-center text-3xl font-bold p-4"> Login</h1>
+        <h2 className="p4 font-medium text-center"> Login with your email and password</h2>
         <LoginForm error={props.searchParams?.error}
           callbackUrl={props.searchParams?.callbackUrl} />
 

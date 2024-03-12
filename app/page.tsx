@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { options } from "./api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth/next";
+import { Button } from "@/components/ui/button";
 
 
 export default async function Home() {
@@ -24,11 +25,13 @@ export default async function Home() {
             
           </p>
           <p className="flex">
-          <Link href="/signin">
-              <span className="text-bold cursor-pointer hover:underline">
-                Sign In
-              </span>
-            </Link>
+          <Button variant="outline" asChild>
+            <Link href="/signin">
+                <span className="text-bold cursor-pointer hover:underline">
+                  Sign In
+                </span>
+              </Link>
+            </Button>
           </p>
         </div>
       )}

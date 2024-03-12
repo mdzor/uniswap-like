@@ -7,7 +7,7 @@ import { ArrowUpDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { formatCrypto, formatNumber } from '@/lib/utils'
 
-export type Token = {
+export type TokenData = {
   name: string
   symbol: string
   price: string
@@ -16,7 +16,7 @@ export type Token = {
   volume: string
 }
 
-export const columns: ColumnDef<Token>[] = [
+export const columns: ColumnDef<TokenData>[] = [
   {
     accessorKey: 'name',
     header: ({ column }) => {
