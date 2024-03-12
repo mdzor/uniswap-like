@@ -4,7 +4,7 @@ import { TokenData } from "../components/columns";
 export async function fetchTokens(): Promise<TokenData[]> {
   let response;
   try {
-    response = await fetch(process.env.NEXTAUTH_URL + '/api/coinmarketcap', {headers: headers(), next: { revalidate: 3600 } });
+    response = await fetch(process.env.NEXTAUTH_URL + '/api/coinmarketcap', { next: { revalidate: 3600 } });
   } catch (error) {
     throw new Error('Failed to fetch data: ' + error);
   }
