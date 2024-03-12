@@ -3,13 +3,21 @@ import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth/next'
 import { options } from '../auth/[...nextauth]/options';
 
+const getToken = async () => {
+  const session: any = await getServerSession(options)
+  let token
+  if (session && session.jwt) {
+    token = session.jwt
+  }
+  return token
+}
+
 export async function GET(request: Request) {
 
-
-  const session = await getServerSession(options);
-  if (!session) { 
-    return new NextResponse(JSON.stringify({error: 'Unauthorized'}), {  
-      status: 401
+  const token = await getToken()
+  if (!token) {
+    return new NextResponse(JSON.stringify({ error: 'Unauthorized' }), {
+      status: 403
     });
   }
 
