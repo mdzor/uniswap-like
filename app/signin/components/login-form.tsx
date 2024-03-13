@@ -16,7 +16,7 @@ type Props = {
 
 const LoginForm = (props: Props) => {
 
-  const [email, setEmail] = useState<undefined | string>("test@test.com");
+  const [email, setEmail] = useState<undefined | string>("");
   const [password, setPassword] = useState<undefined | string>();
 
   const router = useRouter();
@@ -52,7 +52,7 @@ const LoginForm = (props: Props) => {
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             id="email"
-            placeholder="name@example.com"
+            placeholder="enter your email"
             type="email"
             autoCapitalize="none"
             autoComplete="email"
@@ -65,7 +65,7 @@ const LoginForm = (props: Props) => {
           </Label>
           <Input
             id="password"
-            placeholder=""
+            placeholder="enter your password"
             type="password"
             autoCapitalize="none"
             onChange={(e) => setPassword(e.target.value)}
