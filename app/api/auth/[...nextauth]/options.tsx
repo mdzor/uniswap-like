@@ -1,4 +1,4 @@
-import { prisma } from '../../../../lib/prisma'
+import prisma from '@/configs/db'
 import { compare } from 'bcryptjs'
 import type { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'

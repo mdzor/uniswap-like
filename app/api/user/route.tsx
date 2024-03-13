@@ -1,10 +1,8 @@
-import { PrismaClient } from '@prisma/client';
 import { NextRequest, NextResponse } from 'next/server'
 import { NextApiRequest } from 'next/types';
 import { getCsrfToken, useSession } from 'next-auth/react';
+import prisma from '@/configs/db'
 
-
-const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
 
