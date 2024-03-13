@@ -28,9 +28,8 @@ export async function GET(request: Request) {
       'X-CMC_PRO_API_KEY': cmcApiKey
     };
 
-    const response = await axios('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=1000', { headers });
+    const response = await axios('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', { headers, params: {limit: 2000, aux: 'platform'} });
     const data = await response.data;
-
     return new NextResponse(JSON.stringify(data), {
       status: 200
     })

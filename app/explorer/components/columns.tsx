@@ -31,12 +31,16 @@ export const columns: ColumnDef<TokenData>[] = [
       )
     },
     cell: ({ row }) => {
-      return <div className='font-medium'>{row.getValue('name')} {row.getValue('symbol')}</div>
+      return <div className='font-medium'>{row.getValue('name')}</div>
     }
   },
   {
     accessorKey: 'symbol',
-    header: '',
+    header: 'Symbol',
+  },
+  {
+    accessorKey: 'platform',
+    header: 'Platform',
   },
   {
     accessorKey: 'price',

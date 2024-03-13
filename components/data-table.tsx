@@ -25,6 +25,15 @@ import {
 } from '@/components/ui/table'
 
 import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
+import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
@@ -79,6 +88,21 @@ export function DataTable<TData, TValue>({
             className='max-w-sm'
           />
         </div>
+
+        <Select
+         onValueChange={field =>
+          table.getColumn('platform')?.setFilterValue(field == 'all'? '': field )} >
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Chains" />
+          </SelectTrigger>
+          <SelectContent>
+              <SelectItem value="all">All Chains</SelectItem>
+              <SelectItem value="Ethereum">Ethereum</SelectItem>
+              <SelectItem value="Solana">Solana</SelectItem>
+              <SelectItem value="Optimism">Optimism</SelectItem>
+              <SelectItem value="Ava">Avax</SelectItem>
+          </SelectContent>
+        </Select>
 
         {/* Column visibility */}
         <DropdownMenu>

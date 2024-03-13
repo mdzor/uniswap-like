@@ -20,6 +20,7 @@ export async function fetchTokens(): Promise<TokenData[]> {
       id: r.id,
       name: r.name,
       symbol: r.symbol,
+      platform: r.platform?.name || '',
       price: r.quote['USD'].price,
       priceChange1: r.quote['USD'].percent_change_1h,
       priceChange24:r.quote['USD'].percent_change_24h,
